@@ -33,6 +33,10 @@ object Dependencies {
     val room = "androidx.room:room-runtime:${Versions.room}"
     val roomKtx = "androidx.room:room-ktx:${Versions.room}"
     val roomCompiler = "androidx.room:room-compiler:${Versions.room}"
+    //NAVIGATION
+    val navigation = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
+    val navigationUi = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
+    val navigationFeature = "androidx.navigation:navigation-dynamic-features-fragment:${Versions.navigation}"
 
 
     //TEST

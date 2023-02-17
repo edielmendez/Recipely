@@ -38,14 +38,14 @@ android {
 dependencies {
 
     //MAIN
-    //implementation 'androidx.core:core-ktx:1.7.0'
     implementation Dependencies.coreKtx
-    //implementation 'androidx.appcompat:appcompat:1.6.0'
     implementation Dependencies.appCompat
-    //implementation 'com.google.android.material:material:1.7.0'
     implementation Dependencies.materialDesign
-    //implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation Dependencies.constraintLayout
+    //NAVIGATION
+    implementation Dependencies.navigation
+    implementation Dependencies.navigationUi
+    implementation Dependencies.navigationFeature
     //LIFECYCLE
 
     //TEST

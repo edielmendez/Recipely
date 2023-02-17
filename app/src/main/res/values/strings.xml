@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Recipely</string>
+    <string name="recipely_recipe_item">Healthy Taco Salad</string>
 </resources>

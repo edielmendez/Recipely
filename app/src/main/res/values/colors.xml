@@ -7,4 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <!--Theme Colors-->
+    <color name="color_primary">#FFecf0f0</color>
+    <color name="color_primary_variant">#FFecf0f0</color>
+    <color name="color_secondary">#FF77bab9 </color>
+    <color name="color_secondary_variant">#FF66b2b7</color>
+    <!--Custom Colors-->
+    <color name="recipely_black">#FF252c2c</color>
+    <color name="recipely_white">#FFecf0f0</color>
 </resources>

@@ -22,4 +22,6 @@ object Versions {
     val picasso = "2.8"
     //ROOM
     val room = "2.3.0"
+    //NAVIGATION
+    val navigation = "2.5.3"
 }
