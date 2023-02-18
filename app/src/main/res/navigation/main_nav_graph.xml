@@ -9,5 +9,14 @@
         android:id="@+id/homeScreenFragment"
         android:name="com.ediel.mv.recipely.ui.home.HomeScreenFragment"
         android:label="home_screen_fragment"
-        tools:layout="@layout/home_screen_fragment" />
+        tools:layout="@layout/home_screen_fragment" >
+        <action
+            android:id="@+id/action_homeScreenFragment_to_detailScreenFragment"
+            app:destination="@id/detailScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailScreenFragment"
+        android:name="com.ediel.mv.recipely.ui.detail.DetailScreenFragment"
+        android:label="detail_screen_fragment"
+        tools:layout="@layout/detail_screen_fragment" />
 </navigation>

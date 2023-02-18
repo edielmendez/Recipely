@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.ediel.mv.recipely.R
 import com.ediel.mv.recipely.databinding.HomeScreenFragmentBinding
@@ -51,7 +52,7 @@ class HomeScreenFragment : Fragment() {
     private fun setUpAdapter() {
         adapter = RecipeAdapter(MockRecipes.recipes.toMutableList())
         adapter?.onClickTourListener = {
-
+            findNavController().navigate(R.id.action_homeScreenFragment_to_detailScreenFragment)
         }
         binding?.rvRecipes?.layoutManager = GridLayoutManager(activity, 2, GridLayoutManager.VERTICAL, false)
         binding?.rvRecipes?.adapter = adapter

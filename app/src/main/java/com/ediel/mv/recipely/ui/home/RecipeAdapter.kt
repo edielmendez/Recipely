@@ -31,11 +31,9 @@ class RecipeAdapter(private val recipes: MutableList<Recipe>): RecyclerView.Adap
     inner class RecipeViewHolder(val binding: RecipeItemBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(recipe: Recipe) {
             binding.recipeName.text = recipe.name
-            /*binding.txtTourDescription.text = "${tour.description.subSequence(0,80)}..."
-            Picasso.get().load(tour.TourImage).into(binding.tourImage)
             binding.root.setOnClickListener {
-                onClickTourListener?.invoke(tour)
-            }*/
+                onClickTourListener?.invoke(recipe)
+            }
         }
     }
 }

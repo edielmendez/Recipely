@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Recipely</string>
     <string name="recipely_recipe_item">Healthy Taco Salad</string>
+    <string name="recipely_recipe_time_mock">15 Min</string>
+    <string name="recipely_recipe_description_mock">Lorem Ipsum has been the industrys standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book.</string>
+    <string name="recipely_recipe_instruction_mock">Lorem Ipsum has been the industrys standard dummy text ever since the 1500</string>
 </resources>
