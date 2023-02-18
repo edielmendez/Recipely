@@ -26,4 +26,6 @@ object Versions {
     val navigation = "2.5.3"
     //MAPS
     val maps = "18.1.0"
+    //HILT
+    val daggerHilt = "2.44"
 }

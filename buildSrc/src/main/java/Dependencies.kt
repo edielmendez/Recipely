@@ -39,6 +39,9 @@ object Dependencies {
     val navigationFeature = "androidx.navigation:navigation-dynamic-features-fragment:${Versions.navigation}"
     //MAPS
     val maps = "com.google.android.gms:play-services-maps:${Versions.maps}"
+    //HILT
+    val daggerHilt = "com.google.dagger:hilt-android:${Versions.daggerHilt}"
+    val daggerCompiler = "com.google.dagger:hilt-compiler:${Versions.daggerHilt}"
 
 
     //TEST
