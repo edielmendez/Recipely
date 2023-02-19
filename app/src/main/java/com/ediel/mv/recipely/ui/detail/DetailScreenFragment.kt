@@ -61,6 +61,9 @@ class DetailScreenFragment : Fragment() {
             it.cardBack.setOnClickListener {
                 findNavController().popBackStack()
             }
+            it.iconMap.setOnClickListener {
+                findNavController().navigate(R.id.action_detailScreenFragment_to_mapScreenFragment)
+            }
         }
     }
 

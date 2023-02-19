@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
 android {
@@ -46,7 +47,8 @@ dependencies {
     implementation Dependencies.navigation
     implementation Dependencies.navigationUi
     implementation Dependencies.navigationFeature
-    //LIFECYCLE
+    //MAPS
+    implementation Dependencies.maps
 
     //TEST
     //testImplementation 'junit:junit:4.13.2'

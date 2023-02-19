@@ -18,5 +18,14 @@
         android:id="@+id/detailScreenFragment"
         android:name="com.ediel.mv.recipely.ui.detail.DetailScreenFragment"
         android:label="detail_screen_fragment"
-        tools:layout="@layout/detail_screen_fragment" />
+        tools:layout="@layout/detail_screen_fragment" >
+        <action
+            android:id="@+id/action_detailScreenFragment_to_mapScreenFragment"
+            app:destination="@id/mapScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapScreenFragment"
+        android:name="com.ediel.mv.recipely.ui.mapdetail.MapScreenFragment"
+        android:label="map_screen_fragment"
+        tools:layout="@layout/map_screen_fragment" />
 </navigation>

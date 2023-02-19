@@ -24,4 +24,6 @@ object Versions {
     val room = "2.3.0"
     //NAVIGATION
     val navigation = "2.5.3"
+    //MAPS
+    val maps = "18.1.0"
 }

@@ -37,6 +37,8 @@ object Dependencies {
     val navigation = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
     val navigationUi = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
     val navigationFeature = "androidx.navigation:navigation-dynamic-features-fragment:${Versions.navigation}"
+    //MAPS
+    val maps = "com.google.android.gms:play-services-maps:${Versions.maps}"
 
 
     //TEST
