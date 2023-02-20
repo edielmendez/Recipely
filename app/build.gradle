@@ -65,6 +65,8 @@ dependencies {
     kapt Dependencies.daggerCompiler
     //PICASSO
     implementation Dependencies.picasso
+    //LOTTIE
+    implementation Dependencies.lottie
 
     //TEST
     //testImplementation 'junit:junit:4.13.2'

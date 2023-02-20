@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.ediel.mv.recipely.R
 import com.ediel.mv.recipely.databinding.HomeScreenFragmentBinding
+import com.ediel.mv.recipely.ui.common.RecipelyBaseFragment
 import com.ediel.mv.recipely.ui.ext.nonNullObserve
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -26,7 +27,7 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 @AndroidEntryPoint
-class HomeScreenFragment : Fragment() {
+class HomeScreenFragment : RecipelyBaseFragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -61,7 +62,11 @@ class HomeScreenFragment : Fragment() {
         viewModel.uiState.nonNullObserve(viewLifecycleOwner){
             when(it){
                 is HomeUIState.Loading -> {
-
+                    if (it?.isLoading == true){
+                        showLoader()
+                    }else{
+                        hideLoader()
+                    }
                 }
                 is HomeUIState.Success -> {
                     it.data?.let { recipes -> adapter?.setRecipes(recipes) }
