@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.ediel.mv.recipely.data.repository.RecipesDataSource
 import com.ediel.mv.recipely.data.repository.RecipesRepository
+import com.ediel.mv.recipely.domain.models.Recipe
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -14,8 +15,8 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(
     private val repository: RecipesDataSource
 ): ViewModel() {
-    private val _uiState = MutableLiveData<HomeUIState>()
-    val uiState: LiveData<HomeUIState> = _uiState
+    private val _uiState = MutableLiveData<HomeUIState<List<Recipe>>>()
+    val uiState: LiveData<HomeUIState<List<Recipe>>> = _uiState
 
     init {
         getRecipes()

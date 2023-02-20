@@ -62,7 +62,7 @@ class HomeScreenFragment : Fragment() {
 
                 }
                 is HomeUIState.Success -> {
-                    adapter?.setRecipes(it.recipes)
+                    it.data?.let { recipes -> adapter?.setRecipes(recipes) }
                 }
                 is HomeUIState.Error -> {
 
