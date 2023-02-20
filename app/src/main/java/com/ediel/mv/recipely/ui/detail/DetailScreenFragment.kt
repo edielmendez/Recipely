@@ -5,14 +5,21 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.ediel.mv.recipely.R
 import com.ediel.mv.recipely.databinding.DetailScreenFragmentBinding
 import com.ediel.mv.recipely.databinding.HomeScreenFragmentBinding
+import com.ediel.mv.recipely.domain.models.Recipe
+import com.ediel.mv.recipely.ui.home.HomeViewModel
 import com.ediel.mv.recipely.ui.home.MockRecipes
 import com.ediel.mv.recipely.ui.home.RecipeAdapter
 import com.google.android.material.tabs.TabLayout
+import com.squareup.picasso.Picasso
+import dagger.hilt.android.AndroidEntryPoint
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,6 +31,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [DetailScreenFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
+@AndroidEntryPoint
 class DetailScreenFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -31,7 +39,11 @@ class DetailScreenFragment : Fragment() {
 
     private var adapter: IngredientAdapter? = null
     private var adapterIntructions: InstructionAdapter? = null
-    private var binding: DetailScreenFragmentBinding? = null
+    private var _binding: DetailScreenFragmentBinding? = null
+    private val binding get() = _binding!!
+
+    //private val viewModel: DetailScreenViewModel by viewModels()
+    private val viewModelHome: HomeViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,8 +57,8 @@ class DetailScreenFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DetailScreenFragmentBinding.inflate(inflater, container, false)
-        return binding!!.root
+        _binding = DetailScreenFragmentBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -54,6 +66,19 @@ class DetailScreenFragment : Fragment() {
         setUpAdapters()
         setUpTabs()
         setUpListeners()
+        setUpUi()
+    }
+
+    private fun setUpUi() {
+        viewModelHome?.selectedRecipe?.let {
+            binding?.recipeName?.text = it.name
+            Picasso.get().load(it.image).into(binding?.recipeImage)
+            binding?.recipeDescription?.text = it.description
+            binding.recipeCalories.text = "${it.calories} Kcal"
+            binding.recipeCarbs.text = "${it.carbs} Carbohidratos"
+            binding.recipeProteins.text = "${it.proteins} Proteínas"
+            binding.recipeFats.text = "${it.fats} Grasas"
+        }
     }
 
     private fun setUpListeners() {
@@ -62,7 +87,7 @@ class DetailScreenFragment : Fragment() {
                 findNavController().popBackStack()
             }
             it.iconMap.setOnClickListener {
-                findNavController().navigate(R.id.action_detailScreenFragment_to_mapScreenFragment)
+                findNavController().navigate(R.id.action_detailScreenFragment_to_mapScreenFragment, bundleOf("latitude" to "", "longitude" to ""))
             }
         }
     }
@@ -92,14 +117,17 @@ class DetailScreenFragment : Fragment() {
     }
 
     private fun setUpAdapters() {
-        adapter = IngredientAdapter(MockIngredients.ingredients.toMutableList())
-        adapter?.onClickIngredientListener = {
+        viewModelHome?.selectedRecipe?.let {
+            adapter = IngredientAdapter(it.ingredients.toMutableList())
+            adapter?.onClickIngredientListener = {
+            }
+            //binding?.rvIngredients?.layoutManager = GridLayoutManager(activity, 2, GridLayoutManager.VERTICAL, false)
+            binding?.rvIngredients?.adapter = adapter
+            ////
+            adapterIntructions = InstructionAdapter(it.instructions.toMutableList())
+            binding?.rvInstructions?.adapter = adapterIntructions
         }
-        //binding?.rvIngredients?.layoutManager = GridLayoutManager(activity, 2, GridLayoutManager.VERTICAL, false)
-        binding?.rvIngredients?.adapter = adapter
-        ////
-        adapterIntructions = InstructionAdapter(MockInstructions.instructions.toMutableList())
-        binding?.rvInstructions?.adapter = adapterIntructions
+
     }
 
     companion object {

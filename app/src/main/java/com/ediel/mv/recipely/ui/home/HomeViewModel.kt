@@ -18,6 +18,8 @@ class HomeViewModel @Inject constructor(
     private val _uiState = MutableLiveData<HomeUIState<List<Recipe>>>()
     val uiState: LiveData<HomeUIState<List<Recipe>>> = _uiState
 
+    var selectedRecipe: Recipe? = null
+
     init {
         getRecipes()
     }

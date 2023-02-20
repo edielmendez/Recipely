@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
@@ -30,7 +32,7 @@ class HomeScreenFragment : Fragment() {
     private var param2: String? = null
     private var adapter: RecipeAdapter? = null
     private var binding: HomeScreenFragmentBinding? = null
-    private val viewModel: HomeViewModel by viewModels()
+    private val viewModel: HomeViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -74,6 +76,7 @@ class HomeScreenFragment : Fragment() {
     private fun setUpAdapter() {
         adapter = RecipeAdapter(mutableListOf())
         adapter?.onClickTourListener = {
+            viewModel.selectedRecipe = it
             findNavController().navigate(R.id.action_homeScreenFragment_to_detailScreenFragment)
         }
         binding?.rvRecipes?.layoutManager = GridLayoutManager(activity, 2, GridLayoutManager.VERTICAL, false)

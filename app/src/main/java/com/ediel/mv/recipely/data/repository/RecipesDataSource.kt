@@ -3,6 +3,8 @@ package com.ediel.mv.recipely.data.repository
 import com.ediel.mv.recipely.data.api.RecipeService
 import com.ediel.mv.recipely.data.models.RecipeDTO
 import com.ediel.mv.recipely.data.response.RecipesResponse
+import com.ediel.mv.recipely.domain.models.Ingredient
+import com.ediel.mv.recipely.domain.models.Instruction
 import com.ediel.mv.recipely.domain.models.Recipe
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -30,7 +32,13 @@ class RecipesDataSource @Inject constructor(
             Recipe(
                 name = it.name ?: "",
                 image = it.image ?: "",
-                description = it.description ?: ""
+                description = it.description ?: "",
+                calories = it.calories ?: 0,
+                carbs = it.carbs ?: 0,
+                proteins = it.proteins ?: 0,
+                fats = it.fats ?: 0,
+                ingredients = it.ingredients.map { name -> Ingredient(name = name) },
+                instructions = it.instructions.map { text -> Instruction(text = text) }
             )
         }
     }
