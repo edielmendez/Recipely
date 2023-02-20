@@ -59,10 +59,10 @@ dependencies {
     //MAPS
     implementation Dependencies.maps
     //HILT
-    implementation "com.google.dagger:hilt-android:2.44"
-    kapt "com.google.dagger:hilt-compiler:2.44"
-    /*implementation Dependencies.daggerHilt
-    implementation Dependencies.daggerCompiler*/
+    //implementation "com.google.dagger:hilt-android:2.44"
+    implementation Dependencies.daggerHilt
+    //kapt "com.google.dagger:hilt-compiler:2.44"
+    kapt Dependencies.daggerCompiler
     //PICASSO
     implementation Dependencies.picasso
 
