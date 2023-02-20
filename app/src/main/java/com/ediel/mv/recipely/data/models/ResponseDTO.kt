@@ -10,6 +10,8 @@ data class RecipeDTO(
     @SerializedName("carbs"        ) var carbs        : Int?              = null,
     @SerializedName("proteins"     ) var proteins     : Int?              = null,
     @SerializedName("fats"         ) var fats         : Int?              = null,
+    @SerializedName("latitude"  ) var latitude  : String?           = null,
+    @SerializedName("longitude"  ) var longitude  : String?           = null,
     @SerializedName("ingredients"  ) var ingredients  : List<String> = listOf(),
     @SerializedName("instructions" ) var instructions : List<String> = listOf()
 )

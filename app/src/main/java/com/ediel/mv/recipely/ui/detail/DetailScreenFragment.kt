@@ -42,7 +42,6 @@ class DetailScreenFragment : Fragment() {
     private var _binding: DetailScreenFragmentBinding? = null
     private val binding get() = _binding!!
 
-    //private val viewModel: DetailScreenViewModel by viewModels()
     private val viewModelHome: HomeViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -87,7 +86,14 @@ class DetailScreenFragment : Fragment() {
                 findNavController().popBackStack()
             }
             it.iconMap.setOnClickListener {
-                findNavController().navigate(R.id.action_detailScreenFragment_to_mapScreenFragment, bundleOf("latitude" to "", "longitude" to ""))
+                findNavController().navigate(
+                    R.id.action_detailScreenFragment_to_mapScreenFragment,
+                    bundleOf(
+                        "latitude" to viewModelHome.selectedRecipe?.latitude,
+                        "longitude" to viewModelHome.selectedRecipe?.longitude,
+                        "name" to viewModelHome.selectedRecipe?.name
+                    )
+                )
             }
         }
     }

@@ -8,6 +8,8 @@ data class Recipe(
     var carbs: Int,
     var proteins: Int,
     var fats: Int,
+    val latitude: String,
+    val longitude: String,
     var ingredients: List<Ingredient>,
     var instructions: List<Instruction>
 )

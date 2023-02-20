@@ -37,6 +37,8 @@ class RecipesDataSource @Inject constructor(
                 carbs = it.carbs ?: 0,
                 proteins = it.proteins ?: 0,
                 fats = it.fats ?: 0,
+                latitude = it.latitude ?: "",
+                longitude = it.longitude ?: "",
                 ingredients = it.ingredients.map { name -> Ingredient(name = name) },
                 instructions = it.instructions.map { text -> Instruction(text = text) }
             )
