@@ -1,10 +1,12 @@
 package com.ediel.mv.recipely.ui.home
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.SearchView.OnQueryTextListener
 import androidx.core.os.bundleOf
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
@@ -56,6 +58,21 @@ class HomeScreenFragment : RecipelyBaseFragment() {
         setUpAdapter()
         binding?.topBar?.topBarTitle?.text = "Recipely App"
         subscribeUi()
+        setUpSearchView()
+    }
+
+    private fun setUpSearchView(){
+        binding?.svRecipes?.setOnQueryTextListener(object : OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                adapter?.filterRecipe(word = newText.toString())
+                return false
+            }
+
+        })
     }
 
     private fun subscribeUi() {

@@ -10,6 +10,7 @@ import com.squareup.picasso.Picasso
 
 class RecipeAdapter(private val recipes: MutableList<Recipe>): RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder>() {
     var onClickTourListener: ((Recipe) -> Unit)? = null
+    private val tempRecipes: MutableList<Recipe> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -26,14 +27,23 @@ class RecipeAdapter(private val recipes: MutableList<Recipe>): RecyclerView.Adap
     fun setRecipes(list: List<Recipe>){
         recipes.clear()
         recipes.addAll(list)
+        tempRecipes.addAll(list.toMutableList())
         notifyDataSetChanged()
     }
 
-    /*fun filterData(list: List<Tour>){
-        tours.clear()
-        tours.addAll(list)
+    fun filterRecipe(word: String){
+        if (word.isNullOrEmpty()){
+            recipes.clear()
+            recipes.addAll(tempRecipes)
+        }else{
+            val filteredList = recipes.filter {
+                it.name.lowercase().contains(word.lowercase())
+            }
+            recipes.clear()
+            recipes.addAll(filteredList)
+        }
         notifyDataSetChanged()
-    }*/
+    }
 
 
     inner class RecipeViewHolder(val binding: RecipeItemBinding): RecyclerView.ViewHolder(binding.root){
