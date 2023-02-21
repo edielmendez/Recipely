@@ -19,13 +19,13 @@ class InstructionAdapter(private val instructions: MutableList<Instruction>): Re
     override fun getItemCount() = instructions.size
 
     override fun onBindViewHolder(holder: InstructionAdapter.RecipeViewHolder, position: Int) {
-        holder.bind(instructions[position])
+        holder.bind(instructions[position], position)
     }
 
 
     inner class RecipeViewHolder(val binding: InstructionItemBinding): RecyclerView.ViewHolder(binding.root){
-        fun bind(item: Instruction) {
-            binding.instructionText.text = item.text
+        fun bind(item: Instruction, position: Int) {
+            binding.instructionText.text = "${position + 1}.- ${item.text}"
             binding.root.setOnClickListener {
                 onClickInstructionListener?.invoke(item)
             }

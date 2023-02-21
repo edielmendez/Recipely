@@ -127,7 +127,6 @@ class DetailScreenFragment : Fragment() {
             adapter = IngredientAdapter(it.ingredients.toMutableList())
             adapter?.onClickIngredientListener = {
             }
-            //binding?.rvIngredients?.layoutManager = GridLayoutManager(activity, 2, GridLayoutManager.VERTICAL, false)
             binding?.rvIngredients?.adapter = adapter
             ////
             adapterIntructions = InstructionAdapter(it.instructions.toMutableList())
