@@ -37,12 +37,16 @@ class RecipeAdapter(private val recipes: MutableList<Recipe>): RecyclerView.Adap
             recipes.addAll(tempRecipes)
         }else{
             val filteredList = recipes.filter {
-                it.name.lowercase().contains(word.lowercase())
+                it.name.lowercase().contains(word.lowercase()) || matchWithAnyIngredient(word, it)
             }
             recipes.clear()
             recipes.addAll(filteredList)
         }
         notifyDataSetChanged()
+    }
+
+    private fun matchWithAnyIngredient(word: String, recipe: Recipe): Boolean{
+        return !recipe.ingredients.filter { it.name.lowercase().contains(word.lowercase()) }.isNullOrEmpty()
     }
 
 
@@ -56,19 +60,3 @@ class RecipeAdapter(private val recipes: MutableList<Recipe>): RecyclerView.Adap
         }
     }
 }
-
-/*private class RecipeDiffCallback : DiffUtil.ItemCallback<Recipe>() {
-    override fun areItemsTheSame(
-        oldItem: Recipe,
-        newItem: Recipe
-    ): Boolean {
-        return oldItem.name == newItem.name
-    }
-
-    override fun areContentsTheSame(
-        oldItem: Recipe,
-        newItem: Recipe
-    ): Boolean {
-        return oldItem.name == newItem.name
-    }
-}*/
