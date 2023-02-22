@@ -1,11 +1,13 @@
 # Android - Recipely App - Code Challenge Yape – Mobile Developer  [![Kotlin](https://img.shields.io/badge/kotlin-1.7.0-blue.svg)](http://kotlinlang.org)
 Recipely Code Challenge Yape – Mobile Developer, la aplicación implementa 3 pantallas:
 
+### ----------------------------------------------------------------------------------------------
 # Pantallas
 - Lista y buscador de las recetas (Home Screen)
 - Detalles de la receta seleccionada (Detail Screen)
 - Mapa geolocalización de origen de la receta (Map Screen)
 
+### ----------------------------------------------------------------------------------------------
 # API BACK END
 [https://www.mockable.io](https://www.mockable.io/)
 
