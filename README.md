@@ -1,4 +1,4 @@
-# Android - Recipely App  [![Kotlin](https://img.shields.io/badge/kotlin-1.7.0-blue.svg)](http://kotlinlang.org)
+# Android - Recipely App - Code Challenge Yape – Mobile Developer  [![Kotlin](https://img.shields.io/badge/kotlin-1.7.0-blue.svg)](http://kotlinlang.org)
 Recipely Code Challenge Yape – Mobile Developer, la aplicación implementa 3 pantallas:
 
 # Pantallas
@@ -14,6 +14,7 @@ Recipely Code Challenge Yape – Mobile Developer, la aplicación implementa 3 p
 # Arquitectura de la APP : MVVM
 ![MVVM](https://cursokotlin.com/wp-content/uploads/2021/04/Esquema-MVVM.png)
 
+### ----------------------------------------------------------------------------------------------
 # Stack
 - [Kotlin 100%](https://kotlinlang.org/)
 - [Coroutines](https://developer.android.com/kotlin/coroutines?hl=es-419)
@@ -27,6 +28,7 @@ Recipely Code Challenge Yape – Mobile Developer, la aplicación implementa 3 p
 - [JUnit](https://developer.android.com/training/testing/junit-runner?hl=es-419)
 - [Mockk](https://mockk.io/)
 
+### ----------------------------------------------------------------------------------------------
 # Screenshots
 
 <table>
@@ -41,3 +43,4 @@ Recipely Code Challenge Yape – Mobile Developer, la aplicación implementa 3 p
     <td><img src="/screenshots/map.jpg" width=270 height=480></td>
   </tr>
  </table>
+### ----------------------------------------------------------------------------------------------
