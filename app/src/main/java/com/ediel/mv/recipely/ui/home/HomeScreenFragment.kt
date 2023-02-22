@@ -1,5 +1,7 @@
 package com.ediel.mv.recipely.ui.home
 
+import androidx.appcompat.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -79,17 +81,17 @@ class HomeScreenFragment : RecipelyBaseFragment() {
         viewModel.uiState.nonNullObserve(viewLifecycleOwner){
             when(it){
                 is HomeUIState.Loading -> {
-                    if (it?.isLoading == true){
+                    if (it.isLoading){
                         showLoader()
                     }else{
                         hideLoader()
                     }
                 }
                 is HomeUIState.Success -> {
-                    it.data?.let { recipes -> adapter?.setRecipes(recipes) }
+                    adapter.setRecipes(list = it.data)
                 }
                 is HomeUIState.Error -> {
-
+                    showErrorDialog(message = it.message)
                 }
             }
         }
@@ -103,6 +105,19 @@ class HomeScreenFragment : RecipelyBaseFragment() {
         }
         binding?.rvRecipes?.layoutManager = GridLayoutManager(activity, 2, GridLayoutManager.VERTICAL, false)
         binding?.rvRecipes?.adapter = adapter
+    }
+
+    private fun showErrorDialog(message: String){
+        val builder = AlertDialog.Builder(requireActivity())
+        builder.setTitle(R.string.recipely_recipe_error_title)
+        builder.setIcon(R.drawable.baseline_warning_24)
+        builder.setMessage(message)
+            .setPositiveButton(R.string.recipely_recipe_ok_button_title){dialog, _ ->
+                dialog.dismiss()
+            }
+
+        builder.create()
+        builder.show()
     }
 
     companion object {
