@@ -1,5 +1,3 @@
-![banner](/screenshots/main.jpg)
-
 # Android - Recipely App  [![Kotlin](https://img.shields.io/badge/kotlin-1.7.0-blue.svg)](http://kotlinlang.org)
 Recipely Code Challenge Yape – Mobile Developer, la aplicación implementa 3 pantallas:
 
@@ -8,12 +6,12 @@ Recipely Code Challenge Yape – Mobile Developer, la aplicación implementa 3 p
 - Detalles de la receta seleccionada (Detail Screen)
 - Mapa geolocalización de origen de la receta (Map Screen)
 
-## API BACK END
+# API BACK END
 [https://www.mockable.io](https://www.mockable.io/)
 
 ### ----------------------------------------------------------------------------------------------
 
-## Arquitectura de la APP : MVVM
+# Arquitectura de la APP : MVVM
 ![MVVM](https://cursokotlin.com/wp-content/uploads/2021/04/Esquema-MVVM.png)
 
 # Stack
