@@ -60,7 +60,11 @@ class MapScreenFragment : Fragment(), OnMapReadyCallback {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.topBar.topBarTitle.text = name.toString()
+        if(name.toString().length > 25){
+            binding.topBar.topBarTitle.text = "${name.toString().subSequence(0, 25)}..."
+        }else{
+            binding.topBar.topBarTitle.text = name.toString()
+        }
         binding.topBar.topBarLeftIcon.setImageDrawable(resources.getDrawable(R.drawable.baseline_arrow_back_24, null))
         binding.topBar.topBarLeftIcon.setOnClickListener{
             findNavController().popBackStack()
