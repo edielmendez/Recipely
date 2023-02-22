@@ -1,8 +1,3 @@
-# Comics App!
-[![Kotlin](https://img.shields.io/badge/kotlin-1.7.21-blue.svg)](http://kotlinlang.org)
-
-Comics App , es un code challange que implementa la API  [https://developer.marvel.com/](https://developer.marvel.com/) , utilizando LiveData, MVVM, Coroutines, y ROOM.
-
 ![banner](/screenshots/main.jpg)
 
 # Android - Recipely App  [![Kotlin](https://img.shields.io/badge/kotlin-1.7.0-blue.svg)](http://kotlinlang.org)
@@ -34,7 +29,7 @@ Recipely Code Challenge Yape – Mobile Developer, la aplicación implementa 3 p
 - [JUnit](https://developer.android.com/training/testing/junit-runner?hl=es-419)
 - [Mockk](https://mockk.io/)
 
-# Snapshots
+# Screenshots
 
 <table>
   <tr>
