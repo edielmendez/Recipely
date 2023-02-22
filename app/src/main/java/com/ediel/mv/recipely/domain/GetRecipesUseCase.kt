@@ -1,4 +1,4 @@
-package com.ediel.mv.recipely.domain.models
+package com.ediel.mv.recipely.domain
 
 import com.ediel.mv.recipely.data.repository.RecipesRepository
 import javax.inject.Inject

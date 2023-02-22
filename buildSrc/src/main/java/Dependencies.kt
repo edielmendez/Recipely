@@ -20,7 +20,7 @@ object Dependencies {
     //LIFECYCLE
     val lifecycle = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.androidxLifecycle}"
     val lifecycleLivedata = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.androidxLifecycle}"
-    val lifecycleCoroutines = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.kotlinxCoroutines}"
+    val lifecycleCoroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.kotlinxCoroutines}"
     //HTTP
     val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
     val gson = "com.squareup.retrofit2:converter-gson:${Versions.gson}"

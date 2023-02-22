@@ -4,9 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.ediel.mv.recipely.data.repository.RecipesDataSource
-import com.ediel.mv.recipely.data.repository.RecipesRepository
-import com.ediel.mv.recipely.domain.models.GetRecipesUseCase
+import com.ediel.mv.recipely.domain.GetRecipesUseCase
 import com.ediel.mv.recipely.domain.models.Recipe
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -25,7 +23,7 @@ class HomeViewModel @Inject constructor(
         getRecipes()
     }
 
-    private fun getRecipes(){
+    fun getRecipes(){
         viewModelScope.launch {
             _uiState.value = HomeUIState.Loading(true)
             val result = useCase()

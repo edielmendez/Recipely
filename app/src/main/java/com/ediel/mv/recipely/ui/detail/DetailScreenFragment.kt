@@ -7,16 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.GridLayoutManager
 import com.ediel.mv.recipely.R
 import com.ediel.mv.recipely.databinding.DetailScreenFragmentBinding
-import com.ediel.mv.recipely.databinding.HomeScreenFragmentBinding
-import com.ediel.mv.recipely.domain.models.Recipe
 import com.ediel.mv.recipely.ui.home.HomeViewModel
-import com.ediel.mv.recipely.ui.home.MockRecipes
-import com.ediel.mv.recipely.ui.home.RecipeAdapter
 import com.google.android.material.tabs.TabLayout
 import com.squareup.picasso.Picasso
 import dagger.hilt.android.AndroidEntryPoint
