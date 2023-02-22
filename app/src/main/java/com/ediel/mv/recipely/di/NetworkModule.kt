@@ -1,6 +1,8 @@
 package com.ediel.mv.recipely.di
 
 import com.ediel.mv.recipely.data.api.RecipeService
+import com.ediel.mv.recipely.data.repository.RecipesDataSource
+import com.ediel.mv.recipely.data.repository.RecipesRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,4 +17,8 @@ class NetworkModule {
     fun provideRecipeService(): RecipeService{
         return RecipeService.create()
     }
+
+    @Provides
+    @Singleton
+    fun provideRecipesRepository(dataSource: RecipesDataSource): RecipesRepository = dataSource
 }

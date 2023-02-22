@@ -33,7 +33,7 @@ class HomeScreenFragment : RecipelyBaseFragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    private var adapter: RecipeAdapter? = null
+    lateinit var adapter: RecipeAdapter
     private var binding: HomeScreenFragmentBinding? = null
     private val viewModel: HomeViewModel by activityViewModels()
 
@@ -97,7 +97,7 @@ class HomeScreenFragment : RecipelyBaseFragment() {
 
     private fun setUpAdapter() {
         adapter = RecipeAdapter(mutableListOf())
-        adapter?.onClickTourListener = {
+        adapter.onClickTourListener = {
             viewModel.selectedRecipe = it
             findNavController().navigate(R.id.action_homeScreenFragment_to_detailScreenFragment)
         }
