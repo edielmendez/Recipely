@@ -31,10 +31,6 @@ Recipely Code Challenge Yape – Mobile Developer, la aplicación implementa 3 p
 - [Mockk](https://mockk.io/)
 
 ### ----------------------------------------------------------------------------------------------
-# APK
-<a href="/apk/recipely.apk" download>Recipely.apk</a>
-
-### ----------------------------------------------------------------------------------------------
 # Screenshots
 
 <table>
