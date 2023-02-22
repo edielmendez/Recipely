@@ -26,15 +26,11 @@ internal class GetRecipesUseCaseTest{
 
     @Test
     fun `when the api return a success result then get values from api`() = runBlocking {
-        //Given
 
         coEvery { respository.getRecipes() } returns Result.success(FakeRecipes.recipes)
 
-
-        //When
         val response = getRecipesUseCase()
 
-        //Then
         coVerify(exactly = 1) { respository.getRecipes() }
         assert(response.isSuccess)
         assert(response.getOrNull() == FakeRecipes.recipes)
@@ -42,15 +38,12 @@ internal class GetRecipesUseCaseTest{
 
     @Test
     fun `when the api return a failure result then get message`() = runBlocking {
-        //Given
+
         val errorMessage: String = "Error Messaage"
         coEvery { respository.getRecipes() } returns Result.failure(Exception(errorMessage))
 
-
-        //When
         val response = getRecipesUseCase()
 
-        //Then
         coVerify(exactly = 1) { respository.getRecipes() }
         assert(response.isFailure)
         assert(response.exceptionOrNull()?.message == errorMessage)

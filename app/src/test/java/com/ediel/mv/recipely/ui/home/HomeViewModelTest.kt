@@ -46,26 +46,26 @@ internal class HomeViewModelTest{
 
     @Test
     fun `when viewmodel is created at the first time and get all recipes`() = runTest(){
-        //Given
 
         coEvery { getRecipesUseCase() } returns Result.success(FakeRecipes.recipes)
-        //When
+
         quoteViewModel.getRecipes()
-        //Then
+
+
         assert(quoteViewModel.uiState.value is HomeUIState.Success)
         assert((quoteViewModel.uiState.value as HomeUIState.Success).data == FakeRecipes.recipes)
     }
 
     @Test
     fun `when viewmodel calls get recipes and get failure`() = runTest(){
-        //Given
+
         val errorMessage = "Error Message"
         coEvery { getRecipesUseCase() } returns Result.failure(Exception(errorMessage))
-        //When
+
         quoteViewModel.getRecipes()
-        //Then
+
+
         assert(quoteViewModel.uiState.value is HomeUIState.Error)
         assert((quoteViewModel.uiState.value as HomeUIState.Error).message == errorMessage)
-        //coVerify(exactly = 1) { quoteViewModel.getRecipes() }
     }
 }

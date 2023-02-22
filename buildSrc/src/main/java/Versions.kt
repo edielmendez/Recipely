@@ -9,6 +9,9 @@ object Versions {
     val jUnit = "4.13.2"
     val androidTestRunner = "1.1.5"
     val espressoCore = "3.5.1"
+    val mockk = "1.12.2"
+    val coroutinesTest = "1.6.0"
+    val archCoreTesting = "2.1.0"
     // LIFECYCLE
     val androidxLifecycle = "2.4.1"
     val kotlinxCoroutines = "1.3.9"
