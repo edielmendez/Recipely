@@ -32,7 +32,7 @@ Recipely Code Challenge Yape – Mobile Developer, la aplicación implementa 3 p
 
 ### ----------------------------------------------------------------------------------------------
 # APK
-- [Recipely.apk](/apk/recipely.apk)
+<a href="/apk/recipely.apk" download>Recipely.apk</a>
 
 ### ----------------------------------------------------------------------------------------------
 # Screenshots
